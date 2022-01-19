@@ -1,2 +1,51 @@
-# Deep_Learning-Neural_Network_Lab
-TJU Deep Learning &amp; Neural Network
+# Deep_Learning & Neural_Network_Lab
+
+## 实验环境
+
+- Python 3.9
+- Anaconda3(官网下载或清华镜像都行)
+- PyTorch 1.10.1(安装代码如下)
+
+```bash
+conda install pytorch torchvision torchaudio cudatoolkit=10.2 -c pytorch
+```
+
+# 数据集下载
+
+- 实验使用MNIST数据集
+- 下载地址: http://yann.lecun.com/exdb/mnist/
+
+# 运行方式
+
+- 启动PyTorch环境
+
+```bash
+conda activate pytorch
+```
+
+- 在该环境下运行程序(30-60 minutes per file)
+
+```bash
+python GAN.py               # 运行GAN.py
+python CGAN.py              # 运行CGAN.py
+python DCGAN.py             # 运行DCGAN.py
+python WGAN.py              # 运行WGAN.py
+python Improved_WGAN.py     # 运行Improved_WGAN.py
+```
+
+# 实验结果
+
+|Model|epoch|1|5|10|50|100|150|200|  
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+|GAN|d_loss|0.510469|0.342887|0.248609|0.170712|0.120419|0.169989|0.192855|
+||g_loss|0.956933|1.874407|2.537149|3.263798|3.905378|3.570554|3.132934|
+|CGAN|d_loss|0.106481|0.135711|0.194618|0.17816|0.124881|0.106104|0.097463|
+||g_loss|0.660399|0.585134|0.415263|0.474954|0.632873|0.689216|0.718078|
+|DCGAN|d_loss|0.692203|0.631018|0.588311|0.463967|0.334903|0.242517|0.103577|
+||g_loss|0.694127|0.829934|0.936831|1.402277|2.230488|2.936166|2.757655|
+|WGAN|d_loss|-0.291029|-0.329138|-0.468464|-0.214993|-0.123098|-0.080621|-0.060724|
+||g_loss|-12.6155|-0.209976|-0.662237|-0.456756|-0.427529|-0.388925|-0.197952|
+|Improved_WGAN|d_loss|-0.246925|-7.846449|-6.713724|-3.10867|-2.067324|-1.634501|-1.393292|
+||g_loss|-14.636739|0.762477|1.745449|-2.624076|-2.965248|-2.781996|-2.585317|
+
+- 具体数据详见 *data.xls* 文件
